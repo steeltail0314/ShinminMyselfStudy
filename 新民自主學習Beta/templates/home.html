@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>網站介紹</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/home">網站介紹</a>
+        <a href="/chat">匿名聊天室</a>
+        <a href="/about">作者介紹</a>
+        <a href="{{ url_for('logout') }}" class="link-button">登出</a>  <!-- 新增登出按鈕 -->
+    </nav>
+    <main id="home-container">
+        <h1>網站介紹</h1>
+        <p>
+            這是一個為了自主學習而生的匿名論壇。<br>
+            若有過失發言請自行負責。<br>
+            希望大家玩得開心。
+        </p>
+    </main>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作者介紹</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/home">網站介紹</a>
+        <a href="/chat">匿名聊天室</a>
+        <a href="/about">作者介紹</a>
+        <a href="{{ url_for('logout') }}" class="link-button">登出</a>  <!-- 新增登出按鈕 -->
+    </nav>
+    <main id="about-container">
+        <h1>作者介紹</h1>
+        <p>
+            Made By 210064徐翊家<br>
+            如果你有任何問題或建議，請隨時聯繫我。<br>
+            MY Email: 11210064@stu.shinmin.tc.edu.tw
+        </p>
+        <a href="https://www.instagram.com/_steeltail/" class="link-button" target="_blank">IG: steeltail</a>
+    </main>
+</body>
+</html>

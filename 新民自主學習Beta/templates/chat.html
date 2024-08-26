@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聊天室</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/home">網站介紹</a>
+        <a href="/chat">匿名聊天室</a>
+        <a href="/about">作者介紹</a>
+        <a href="{{ url_for('logout') }}" class="link-button">登出</a>  <!-- 新增登出按鈕 -->
+    </nav>
+    <main id="chat-container">
+        <div id="messageList"></div>
+    </main>
+    <div id="chat-input">
+        <input type="text" id="postInput" placeholder="輸入消息...">
+        <button id="postButton">發送</button>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>

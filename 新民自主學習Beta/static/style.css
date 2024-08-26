@@ -1,0 +1,232 @@
+/* 全局样式 */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #36393F;
+    color: #FFFFFF;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px; /* 为导航栏留出空间 */
+    box-sizing: border-box;
+    overflow: hidden; /* 防止整个页面滚动 */
+}
+
+/* 导航栏样式 */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #2C2F33;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+/* 主容器样式 */
+#main-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* 聊天室容器 */
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 60px); /* 减去导航栏和一些额外空间 */
+    position: relative;
+}
+
+/* 消息列表区域 */
+#messageList {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column; /* 改回正常的列方向 */
+    padding: 10px;
+    margin-bottom: 60px; /* 为输入区域留出空间 */
+}
+
+/* 单个消息样式 */
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #40444B;
+}
+
+.admin-message {
+    color: red;
+    font-weight: bold;
+}
+
+/* 聊天输入区域 */
+#chat-input {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #2C2F33;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid #4f545c;
+}
+
+#postInput {
+    flex: 5;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#postButton {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #7289DA;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#postButton:hover {
+    background-color: #677BC4;
+    transform: translateY(-2px);
+}
+
+/* 动画效果 */
+@keyframes fadeIn {    
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    } 
+}
+
+@keyframes fadeInNickname {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* 昵称输入容器 */
+#nickname-container {
+    width: 90%;
+    max-width: 600px;
+    background-color: #2C2F33;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fadeInNickname 1s ease-out;
+}
+
+/* 输入框样式 */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* 按钮样式 */
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #7289DA;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #677BC4;
+    transform: translateY(-2px);
+}
+
+/* IG 按钮样式 */
+.link-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #7289DA;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.link-button:hover {
+    background-color: #677BC4;
+}
+
+/* 手机端适应 */
+@media (max-width: 768px) {
+    #nickname-container {
+        padding: 20px;
+    }
+
+    #chat-input {
+        padding: 5px;
+        gap: 5px;
+    }
+
+    #postInput, #postButton {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #postButton {
+        padding: 8px 12px;
+    }
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>歡迎頁面</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div id="nickname-container">  <!-- 使用相同的容器樣式 -->
+        <h1>歡迎來到匿名新民！</h1>
+        <p>請選擇以下選項：</p>
+        <a href="{{ url_for('register') }}" class="link-button">註冊</a><br>
+        <a href="{{ url_for('login') }}" class="link-button">登入</a><br>
+        <a href="{{ url_for('guest_login') }}" class="link-button">訪客登入</a>
+    </div>
+</body>
+</html>
